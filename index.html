@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f9fc">
+  <title>Weather Station</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="header">
+      <div class="brand-mark" aria-hidden="true">☀</div>
+      <h1>Weather Station</h1>
+      <p class="subtitle">Live weather, wherever you are.</p>
+    </header>
+
+    <form id="search-form" class="search-form">
+      <label class="sr-only" for="city-input">Search city</label>
+      <input id="city-input" type="text" placeholder="Search city (e.g. Mumbai)" autocomplete="off" required>
+      <button type="submit">Search <span aria-hidden="true">⌕</span></button>
+    </form>
+
+    <section class="location-block" aria-live="polite">
+      <div class="online"><span class="status-dot"></span><span id="station-status">Connecting to station...</span></div>
+      <h2 id="city-name">Pune</h2>
+      <p id="local-date">--</p>
+    </section>
+
+    <div id="message" class="message" role="status"></div>
+
+    <section class="weather-grid" aria-label="Current weather">
+      <article class="weather-card temperature-card">
+        <div class="card-icon">🌡️</div>
+        <h3>Temperature</h3>
+        <p class="reading"><span id="temperature">--</span><span class="unit">°C</span></p>
+        <p class="card-note" id="feels-like">Feels like --°C</p>
+      </article>
+
+      <article class="weather-card">
+        <div class="card-icon">💧</div>
+        <h3>Humidity</h3>
+        <p class="reading"><span id="humidity">--</span><span class="unit">%</span></p>
+        <p class="card-note">Relative humidity</p>
+      </article>
+
+      <article class="weather-card">
+        <div class="card-icon" id="condition-icon">🌤️</div>
+        <h3>Conditions</h3>
+        <p class="reading condition-reading" id="conditions">--</p>
+        <p class="card-note">Current sky conditions</p>
+      </article>
+
+      <article class="weather-card">
+        <div class="card-icon">💨</div>
+        <h3>Wind Speed</h3>
+        <p class="reading"><span id="wind-speed">--</span><span class="unit"> km/h</span></p>
+        <p class="card-note" id="wind-direction">Wind direction: --</p>
+      </article>
+    </section>
+
+    <footer>Weather data provided by Open-Meteo · <span id="updated-at">Waiting for update</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
